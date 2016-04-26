@@ -106,9 +106,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 24);
+            this.listBox1.Location = new System.Drawing.Point(12, 27);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(466, 316);
+            this.listBox1.Size = new System.Drawing.Size(441, 303);
             this.listBox1.TabIndex = 1;
             // 
             // генерацияАлгоримомМарковаToolStripMenuItem

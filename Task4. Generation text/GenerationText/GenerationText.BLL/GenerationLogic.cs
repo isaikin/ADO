@@ -69,14 +69,6 @@ namespace GenerationText.BLL
             }
         }
 
-        private void InitialisationDfs()
-        {
-            foreach (var words in wordsUse.Keys)
-            {
-                this.wordsUse[words] = false;
-            }
-        }
-
         private void DFS(string start, int n, ref string result, ref int count)
         {
             if (count == n)
@@ -89,7 +81,7 @@ namespace GenerationText.BLL
             this.DFS(dictonary[rand.Next(0, dictonary.Count)], n, ref result, ref count);
         }
 
-        private List<string> GetSeparator(string text)
+        public List<string> GetSeparator(string text)
         {
             var separator = new List<string>();
             foreach (var tempChar in text)

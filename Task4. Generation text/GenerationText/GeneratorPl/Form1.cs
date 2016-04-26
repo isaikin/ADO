@@ -1,6 +1,7 @@
 ﻿using GenerationText.BLL;
 using System;
 using System.Windows.Forms;
+using GenerationText.Entity;
 
 namespace GeneratorPl
 {
@@ -15,7 +16,7 @@ namespace GeneratorPl
 
         private void сВыборомКолчичестваСловToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listBox1.Text = logic.GenerateRandom("говорил");
+            listBox1.Items.Add(logic.GenerateRandom("говорил"));
         }
 
         private void изФайлаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,6 +33,16 @@ namespace GeneratorPl
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+        private void генерацияАлгоримомМарковаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MarkovChain temp = new MarkovChain();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                listBox1.Items.Add(temp.GenerateText(openFileDialog1.FileName));
+            }
+             
         }
     }
 }

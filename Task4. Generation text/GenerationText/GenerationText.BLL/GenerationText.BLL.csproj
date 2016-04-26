@@ -56,6 +56,10 @@
       <Project>{d280bc89-99ec-49bc-b707-cbd0701a9353}</Project>
       <Name>GenerationText.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GenerationText.Entity\GenerationText.Entity.csproj">
+      <Project>{1977a1b3-c3e5-404e-aec0-26cc9c22837f}</Project>
+      <Name>GenerationText.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

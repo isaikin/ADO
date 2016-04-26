@@ -84,6 +84,10 @@
       <Project>{19b90963-b136-4d31-b528-523280bb9736}</Project>
       <Name>GenerationText.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GenerationText.Entity\GenerationText.Entity.csproj">
+      <Project>{1977a1b3-c3e5-404e-aec0-26cc9c22837f}</Project>
+      <Name>GenerationText.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="inputWords.txt" />

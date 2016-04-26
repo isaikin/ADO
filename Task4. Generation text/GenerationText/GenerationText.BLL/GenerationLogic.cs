@@ -46,7 +46,6 @@ namespace GenerationText.BLL
         {
             string result = string.Empty;
             int i = 0;
-            // this.InitialisationDfs();
             this.DFS(wordsUse.Keys.ToArray()[rand.Next(1, wordsUse.Count)], n, ref result, ref i);
 
             return result;

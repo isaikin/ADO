@@ -7,7 +7,25 @@ namespace GeneratorPl
 {
     public partial class Form1 : Form
     {
+        
         private GenerationLogic GrahpLogic = new GenerationLogic();
+
+        public int N
+        {
+            get
+            {
+                return N;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Is not pozitive");//исправить
+                }
+
+                N = value;
+            }
+        }
 
         public Form1()
         {
@@ -16,7 +34,14 @@ namespace GeneratorPl
 
         private void сВыборомКолчичестваСловToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text = GrahpLogic.GenerateRandom("говорил");
+            try
+            {
+                label1.Text = GrahpLogic.GenerateRandom("говорил");
+            }
+            catch
+            {
+            }
+
         }
 
         private void изФайлаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,12 +67,12 @@ namespace GeneratorPl
             {
                 label1.Text = temp.GenerateText(openFileDialog1.FileName);
             }
-             
+
         }
 
         private void ввестиТекстToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

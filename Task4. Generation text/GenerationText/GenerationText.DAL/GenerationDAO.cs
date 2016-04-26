@@ -14,8 +14,56 @@ namespace GenerationText.DAL
             words = this.GetWords();
         }
 
+        public void AddWords(string path)
+        {
+            var text = new List<string>();
+
+            using (StreamReader input = new StreamReader(path))
+            {
+                var temptext = input.ReadToEnd();
+                var separator = this.GetSeparator(temptext);
+
+               text = temptext.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
+            }
+            text = text.Select(word => this.ClearWord(word)).ToList();
+
+            if (!words.ContainsKey(text[0].ToLower()))
+            {
+                words.Add(text[0].ToLower(), new List<string>());
+            }
+
+            for (int i = 0; i < text.Count - 1; i++)
+            {
+                if (!words.ContainsKey(text[i + 1].ToLower()))
+                {
+                    var tempList = new List<string>();
+                    tempList.Add(text[i].ToLower());
+                    words.Add(text[i + 1].ToLower(), tempList);
+                    if (!words.ContainsKey(text[i].ToLower()))
+                    {
+                        words.Add(text[i].ToLower(), new List<string>());
+                    }
+                }
+                else
+                {
+                    if (!words[text[i + 1].ToLower()].Contains(text[i].ToLower()))
+                    {
+                        words[text[i + 1].ToLower()].Add(text[i].ToLower());
+                    }
+                }
+            }
+
+            if (!words.ContainsKey(text.Last().ToLower()))
+            {
+                words.Add(text.Last().ToLower(), new List<string>());
+            }
+
+            this.SaveWords();
+        }
+
         public void AddWords(List<string> text)
         {
+            
             text = text.Select(word => this.ClearWord(word)).ToList();
 
             if (!words.ContainsKey(text[0].ToLower()))
@@ -91,6 +139,20 @@ namespace GenerationText.DAL
             }
 
             return result;
+        }
+
+        public List<string> GetSeparator(string text)
+        {
+            var separator = new List<string>();
+            foreach (var tempChar in text)
+            {
+                if ((char.IsSeparator(tempChar) || char.IsPunctuation(tempChar)) && !separator.Contains(tempChar.ToString()))
+                {
+                    separator.Add(tempChar.ToString());
+                }
+            }
+
+            return separator;
         }
 
         private void SaveWords()

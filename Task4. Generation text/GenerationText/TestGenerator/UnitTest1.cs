@@ -13,7 +13,6 @@ namespace TestGenerator
             GenerationLogic test = new GenerationLogic();
 
             var test1 = test.GetSeparator(".");
-            
             CollectionAssert.AreEquivalent(test1, test1.ToArray());
 
         }

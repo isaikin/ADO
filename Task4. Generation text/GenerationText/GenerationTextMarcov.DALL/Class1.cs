@@ -8,5 +8,6 @@ namespace GenerationTextMarcov.DAL
 {
     public class Class1
     {
+        
     }
 }

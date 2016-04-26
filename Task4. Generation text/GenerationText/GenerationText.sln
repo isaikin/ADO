@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerationText.App", "GenerationText\GenerationText.App.csproj", "{010B2F5B-C961-4882-9051-A32BEDFA0B20}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{ADFB9E88-AD2B-4DA4-8DEE-E113D48F034E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorPl", "GeneratorPl\GeneratorPl.csproj", "{0EB9A82E-F2B8-4FE4-B570-F013D0E8E78D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerationText.Entity", "GenerationText.Entity\GenerationText.Entity.csproj", "{1977A1B3-C3E5-404E-AEC0-26CC9C22837F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{0EB9A82E-F2B8-4FE4-B570-F013D0E8E78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EB9A82E-F2B8-4FE4-B570-F013D0E8E78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EB9A82E-F2B8-4FE4-B570-F013D0E8E78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1977A1B3-C3E5-404E-AEC0-26CC9C22837F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1977A1B3-C3E5-404E-AEC0-26CC9C22837F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1977A1B3-C3E5-404E-AEC0-26CC9C22837F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1977A1B3-C3E5-404E-AEC0-26CC9C22837F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

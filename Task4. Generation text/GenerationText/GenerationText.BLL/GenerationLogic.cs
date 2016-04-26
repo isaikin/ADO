@@ -1,13 +1,9 @@
-﻿using GenerationText.BLL.Interface;
-using GenerationText.DAL;
+﻿using GenerationText.DAL;
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace GenerationText.BLL
 {
@@ -41,8 +37,7 @@ namespace GenerationText.BLL
             string result = string.Empty;
             int i = 0;
             this.UpdateWordUse();
-            //this.InitialisationDfs();
-            this.DFS(word,rand.Next(1,100),ref result,ref i);
+            this.DFS(word, rand.Next(1, 100), ref result, ref i);
 
             return result;
         }
@@ -51,7 +46,7 @@ namespace GenerationText.BLL
         {
             string result = string.Empty;
             int i = 0;
-           // this.InitialisationDfs();
+            // this.InitialisationDfs();
             this.DFS(wordsUse.Keys.ToArray()[rand.Next(1, wordsUse.Count)], n, ref result, ref i);
 
             return result;
@@ -60,7 +55,7 @@ namespace GenerationText.BLL
         public void AddText(string text)
         {
             var separator = this.GetSeparator(text);
-            var tempstring =text.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
+            var tempstring = text.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
             this.data.AddWords(tempstring);
         }
 
@@ -91,7 +86,7 @@ namespace GenerationText.BLL
             }
             result += " " + start;
             count++;
-            var dictonary = this.data.Getwords()[start];       
+            var dictonary = this.data.Getwords()[start];
             this.DFS(dictonary[rand.Next(0, dictonary.Count)], n, ref result, ref count);
         }
 
@@ -118,6 +113,5 @@ namespace GenerationText.BLL
                 wordsUse.Add(word, false);
             }
         }
-
     }
 }

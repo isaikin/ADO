@@ -1,18 +1,14 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace GenerationText.DAL
 {
     public class GenerationDAO : IGenerationDAO
     {
-        private static IDictionary<string,List<string>> words;
-         
+        private static IDictionary<string, List<string>> words;
+
         public GenerationDAO()
         {
             words = this.GetWords();
@@ -20,14 +16,14 @@ namespace GenerationText.DAL
 
         public void AddWords(List<string> text)
         {
-            text = text.Select(word =>this.ClearWord(word)).ToList();
+            text = text.Select(word => this.ClearWord(word)).ToList();
 
             if (!words.ContainsKey(text[0].ToLower()))
             {
                 words.Add(text[0].ToLower(), new List<string>());
             }
 
-            for (int i = 0; i < text.Count-1; i++)
+            for (int i = 0; i < text.Count - 1; i++)
             {
                 if (!words.ContainsKey(text[i + 1].ToLower()))
                 {
@@ -66,7 +62,7 @@ namespace GenerationText.DAL
             string outs = "";
             for (int i = 0; i < temp.Length; i++)
             {
-                if (Char.IsLetter(temp[i]))
+                if (!Char.IsControl(temp[i]))
                 {
                     outs += temp[i];
                 }
@@ -74,7 +70,7 @@ namespace GenerationText.DAL
             return outs.Trim(' ');
         }
 
-        private Dictionary<string,List<string>> GetWords()
+        private Dictionary<string, List<string>> GetWords()
         {
             if (!File.Exists("inputWords.txt"))
             {
@@ -83,19 +79,18 @@ namespace GenerationText.DAL
 
             var result = new Dictionary<string, List<string>>();
             using (StreamReader input = new StreamReader("inputWords.txt"))
-            {               
-                var tempstringArray = input.ReadToEnd().Split(new char[] {'|'}, StringSplitOptions.RemoveEmptyEntries);
+            {
+                var tempstringArray = input.ReadToEnd().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in tempstringArray)
                 {
-                    var tempstring =item.Split(new string[] {" "}, StringSplitOptions.RemoveEmptyEntries).Select(word => this.ClearWord(word)).ToList();
+                    var tempstring = item.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(word => this.ClearWord(word)).ToList();
 
-                    if (tempstring.Count !=0 && tempstring[0] != string.Empty)
-                       result.Add(tempstring[0], tempstring.Skip(1).ToList());
-                    
+                    if (tempstring.Count != 0 && tempstring[0] != string.Empty)
+                        result.Add(tempstring[0], tempstring.Skip(1).ToList());
                 }
             }
 
-              return result;
+            return result;
         }
 
         private void SaveWords()
@@ -104,7 +99,7 @@ namespace GenerationText.DAL
             {
                 foreach (var word in words)
                 {
-                    output.WriteLine($"|{word.Key.Trim(' ')} {string.Join(" ", word.Value.ToArray())}|");
+                    output.WriteLine($"{word.Key.Trim(' ')} {string.Join(" ", word.Value.ToArray())}|");
                 }
             }
         }

@@ -94,7 +94,7 @@ namespace GenerationText.Entity
 
             using (StreamReader file = new StreamReader(fileName))
             {
-                string[] text = file.ReadToEnd().Split(' ');
+                string[] text = file.ReadToEnd().Split(new char[] {' ','\n','\r'});
                 if (text.Length == 0)
                 {
                     possible = false;

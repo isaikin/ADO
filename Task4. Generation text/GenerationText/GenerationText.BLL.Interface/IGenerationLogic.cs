@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 
-namespace GenerationText.BLL.Interface
+namespace GenerationText.BLL
 {
     public interface IGenerationLogic
     {
-        string GetGenerateText1();
-
-        string GetGenerateText2(char begWord);
-
-        string GetGenerateText3(int countWords);
-
-        void AddWords(List<string> text);
+        void AddFile(string path);
+        void AddText(string text);
+        string GenerateRandom();
+        string GenerateRandom(int n);
+        List<string> GetSeparator(string text);
+        List<string> GetWords();
+        List<string> GetWords(int n);
     }
 }

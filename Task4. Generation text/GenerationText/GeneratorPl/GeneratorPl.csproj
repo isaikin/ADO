@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GenerationText.BLL.Interface\GenerationText.BLL.Interface.csproj">
+      <Project>{684d1f3b-4bac-467d-8309-a7f8105fec87}</Project>
+      <Name>GenerationText.BLL.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GenerationText.BLL\GenerationText.BLL.csproj">
       <Project>{19b90963-b136-4d31-b528-523280bb9736}</Project>
       <Name>GenerationText.BLL</Name>

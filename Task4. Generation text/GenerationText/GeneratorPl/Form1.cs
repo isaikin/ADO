@@ -2,13 +2,12 @@
 using System;
 using System.Windows.Forms;
 using GenerationText.Entity;
-
 namespace GeneratorPl
 {
     public partial class Form1 : Form
     {
         
-        private GenerationLogic GrahpLogic = new GenerationLogic();
+        private IGenerationLogic GrahpLogic = new GenerationLogic();
 
         private int n = 10;
 
@@ -41,7 +40,13 @@ namespace GeneratorPl
         {
             try
             {
-                label1.Text = GrahpLogic.GenerateRandom(N);
+                var wods = GrahpLogic.GetWords(n);
+                foreach (var item in wods)
+                {
+                    listBox1.Items.Add(item);
+                }
+
+                listBox1.Items.Add("-----------");
             }
             catch
             {   
@@ -61,7 +66,13 @@ namespace GeneratorPl
         {
             try
             {
-                label1.Text = GrahpLogic.GenerateRandom();
+                var wods = GrahpLogic.GetWords();
+                foreach (var item in wods)
+                {
+                    listBox1.Items.Add(item);
+                }
+
+                listBox1.Items.Add("-----------");
             }
             catch
             {
@@ -77,7 +88,7 @@ namespace GeneratorPl
             MarkovChain temp = new MarkovChain();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                label1.Text = temp.GenerateText(openFileDialog1.FileName);
+                //label1.Text = temp.GenerateText(openFileDialog1.FileName);
             }
 
         }

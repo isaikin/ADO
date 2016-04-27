@@ -1,13 +1,15 @@
-﻿using GenerationText.DAL;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using GenerationText.DAL;
+using System.Text;
+using GenerationText.BLL
 
 namespace GenerationText.BLL
 {
-    public class GenerationLogic
+    public class GenerationLogic : IGenerationLogic
     {
         private IGenerationDAO data = new GenerationDAO();
         private Random rand = new Random();
@@ -21,6 +23,50 @@ namespace GenerationText.BLL
             this.DFS(word, rand.Next(1, 100), ref result, ref i);
       
             return result;
+        }
+
+        public List<string> GetWords()
+        {
+            var tempResult = new List<string>();
+            var words = this.GenerateRandom().Split(' ').ToList();
+
+            int count = 0;
+            var tempString = new StringBuilder();
+            for (int i = 0; i < words.Count; i++)
+            {
+                if (count == 5)
+                {
+                    tempResult.Add(tempString.ToString());
+                    count = 0;
+                    tempString.Clear();
+                }
+                tempString.AppendFormat($"{words[i]} ");
+                count++;
+            }
+
+            return tempResult;
+        }
+
+        public List<string> GetWords(int n)
+        {
+            var tempResult = new List<string>();
+            var words = this.GenerateRandom(n).Split(' ').ToList();
+
+            int count = 0;
+            var tempString = new StringBuilder();
+            for (int i = 0; i < words.Count; i++)
+            {
+                if (count == 5)
+                {
+                    tempResult.Add(tempString.ToString());
+                    count = 0;
+                    tempString.Clear();
+                }
+                tempString.AppendFormat($"{words[i]} ");
+                count++;
+            }
+
+            return tempResult;
         }
 
         public string GenerateRandom(int n)

@@ -11,42 +11,25 @@ namespace GenerationText.BLL
     {
         private IGenerationDAO data = new GenerationDAO();
         private Random rand = new Random();
-        private Dictionary<string, bool> wordsUse;
 
-        public GenerationLogic()
+        public string GenerateRandom()
         {
-            wordsUse = new Dictionary<string, bool>();
-
-            foreach (var word in data.Getwords().Keys)
-            {
-                wordsUse.Add(word, false);
-            }
-        }
-
-        public string GenerateRandom(string word)
-        {
-            if (!this.data.Getwords().ContainsKey(word))
-            {
-                throw new ArgumentException("This word not exist");
-            }
-
-            if (string.IsNullOrWhiteSpace(word) || string.IsNullOrEmpty(word))
-            {
-                throw new ArgumentException("Word is empty or consist of WhiteSpace");
-            }
+            var words = data.Getwords();
+            var word = words.ElementAt(rand.Next(1, words.Count)).Key;
             string result = string.Empty;
             int i = 0;
-            this.UpdateWordUse();
             this.DFS(word, rand.Next(1, 100), ref result, ref i);
-
+      
             return result;
         }
 
         public string GenerateRandom(int n)
         {
+            var words = data.Getwords();
+            var word = words.ElementAt(rand.Next(1, words.Count)).Key;
             string result = string.Empty;
             int i = 0;
-            this.DFS(wordsUse.Keys.ToArray()[rand.Next(1, wordsUse.Count)], n, ref result, ref i);
+            this.DFS(word, n, ref result, ref i);
 
             return result;
         }
@@ -93,16 +76,6 @@ namespace GenerationText.BLL
             }
 
             return separator;
-        }
-
-        private void UpdateWordUse()
-        {
-            wordsUse.Clear();
-
-            foreach (var word in data.Getwords().Keys)
-            {
-                wordsUse.Add(word, false);
-            }
         }
     }
 }

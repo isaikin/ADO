@@ -40,6 +40,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.задатьКоличесвоСловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,22 +91,23 @@
             // 
             this.загрузитьСловаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изФайлаToolStripMenuItem,
-            this.ввестиТекстToolStripMenuItem});
+            this.ввестиТекстToolStripMenuItem,
+            this.задатьКоличесвоСловToolStripMenuItem});
             this.загрузитьСловаToolStripMenuItem.Name = "загрузитьСловаToolStripMenuItem";
-            this.загрузитьСловаToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.загрузитьСловаToolStripMenuItem.Text = "Загрузить текст";
+            this.загрузитьСловаToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.загрузитьСловаToolStripMenuItem.Text = "Загрузить";
             // 
             // изФайлаToolStripMenuItem
             // 
             this.изФайлаToolStripMenuItem.Name = "изФайлаToolStripMenuItem";
-            this.изФайлаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.изФайлаToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.изФайлаToolStripMenuItem.Text = "Из файла";
             this.изФайлаToolStripMenuItem.Click += new System.EventHandler(this.изФайлаToolStripMenuItem_Click);
             // 
             // ввестиТекстToolStripMenuItem
             // 
             this.ввестиТекстToolStripMenuItem.Name = "ввестиТекстToolStripMenuItem";
-            this.ввестиТекстToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ввестиТекстToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.ввестиТекстToolStripMenuItem.Text = "Ввести текст";
             this.ввестиТекстToolStripMenuItem.Click += new System.EventHandler(this.ввестиТекстToolStripMenuItem_Click);
             // 
@@ -123,16 +126,34 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 0);
+            this.textBox1.Location = new System.Drawing.Point(209, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
+            // 
+            // задатьКоличесвоСловToolStripMenuItem
+            // 
+            this.задатьКоличесвоСловToolStripMenuItem.Name = "задатьКоличесвоСловToolStripMenuItem";
+            this.задатьКоличесвоСловToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.задатьКоличесвоСловToolStripMenuItem.Text = "Задать количесво слов";
+            this.задатьКоличесвоСловToolStripMenuItem.Click += new System.EventHandler(this.задатьКоличесвоСловToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(315, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 352);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -161,6 +182,8 @@
         private System.Windows.Forms.ToolStripMenuItem генерацияАлгоримомМарковаToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem задатьКоличесвоСловToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

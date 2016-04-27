@@ -88,7 +88,7 @@ namespace GeneratorPl
             MarkovChain temp = new MarkovChain();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //label1.Text = temp.GenerateText(openFileDialog1.FileName);
+                listBox1.Items.Add(temp.GenerateText(openFileDialog1.FileName);
             }
 
         }

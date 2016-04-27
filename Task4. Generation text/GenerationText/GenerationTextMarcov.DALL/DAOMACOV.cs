@@ -33,7 +33,7 @@ namespace GenerationTextMarcov.DAL
                 {
                     result.AppendFormat($"{item }");
                 }
-                words = result.ToString();
+                words += result.ToString();
 
                 this.SaveWords();
             }

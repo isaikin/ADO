@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GenerationText.DAL
 {
-    public class GenerationDAO : IGenerationDAO, IGenerationDAO
+    public class GenerationDAO : IGenerationDAO
     {
         private static IDictionary<string, List<string>> words;
 

@@ -1,19 +1,18 @@
 ﻿using GenerationText.BLL;
+using GenerationText.Entity;
 using System;
 using System.Windows.Forms;
-using GenerationText.Entity;
+
 namespace GeneratorPl
 {
     public partial class Form1 : Form
     {
-        
         private IGenerationLogic GrahpLogic = new GenerationLogic();
 
         private int n = 10;
 
         public Form1()
         {
-            
             InitializeComponent();
             textBox1.Visible = false;
             button1.Visible = false;
@@ -49,9 +48,8 @@ namespace GeneratorPl
                 listBox1.Items.Add("-----------");
             }
             catch
-            {   
+            {
             }
-
         }
 
         private void изФайлаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,23 +88,20 @@ namespace GeneratorPl
             {
                 listBox1.Items.Add(temp.GenerateText(openFileDialog1.FileName));
             }
-
         }
 
         private void ввестиТекстToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void задатьКоличесвоСловToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Visible =true;
+            textBox1.Visible = true;
             button1.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (int.Parse(textBox1.Text) < 0)
             {
                 MessageBox.Show("Отрицательное количество слов");

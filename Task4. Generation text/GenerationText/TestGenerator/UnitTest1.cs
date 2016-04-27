@@ -1,5 +1,4 @@
-﻿using System;
-using GenerationText.BLL;
+﻿using GenerationText.BLL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestGenerator
@@ -14,7 +13,6 @@ namespace TestGenerator
 
             var test1 = test.GetSeparator(".");
             CollectionAssert.AreEquivalent(test1, test1.ToArray());
-
         }
 
         [TestMethod]
@@ -25,7 +23,6 @@ namespace TestGenerator
             var test1 = test.GetSeparator(".");
 
             CollectionAssert.AreEquivalent(test1, test1.ToArray());
-
         }
     }
 }

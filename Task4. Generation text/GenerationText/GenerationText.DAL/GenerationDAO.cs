@@ -23,7 +23,7 @@ namespace GenerationText.DAL
                 var temptext = input.ReadToEnd();
                 var separator = this.GetSeparator(temptext);
 
-               text = temptext.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
+                text = temptext.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
             }
             text = text.Select(word => this.ClearWord(word)).ToList();
 
@@ -63,7 +63,6 @@ namespace GenerationText.DAL
 
         public void AddWords(List<string> text)
         {
-            
             text = text.Select(word => this.ClearWord(word)).ToList();
 
             if (!words.ContainsKey(text[0].ToLower()))

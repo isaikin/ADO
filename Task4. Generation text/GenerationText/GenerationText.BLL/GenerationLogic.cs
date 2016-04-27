@@ -1,11 +1,9 @@
-﻿
+﻿using GenerationText.DAL;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using GenerationText.DAL;
 using System.Text;
-using GenerationText.BLL
 
 namespace GenerationText.BLL
 {
@@ -21,7 +19,7 @@ namespace GenerationText.BLL
             string result = string.Empty;
             int i = 0;
             this.DFS(word, rand.Next(1, 100), ref result, ref i);
-      
+
             return result;
         }
 

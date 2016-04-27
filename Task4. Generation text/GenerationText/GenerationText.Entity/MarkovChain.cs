@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace GenerationText.Entity
@@ -12,7 +9,7 @@ namespace GenerationText.Entity
         public Dictionary<List<string>, Dictionary<string, double>> Prob = new Dictionary<List<string>, Dictionary<string, double>>(0);
         public static Random genNum = new Random();
         public int K = 2, N = 10;
-        int PrecCoeff = 50;
+        private int PrecCoeff = 50;
         public bool possible = true;
 
         public string GenerateText(string fileName)
@@ -94,7 +91,7 @@ namespace GenerationText.Entity
 
             using (StreamReader file = new StreamReader(fileName))
             {
-                string[] text = file.ReadToEnd().Split(new char[] {' ','\n','\r'});
+                string[] text = file.ReadToEnd().Split(new char[] { ' ', '\n', '\r' });
                 if (text.Length == 0)
                 {
                     possible = false;

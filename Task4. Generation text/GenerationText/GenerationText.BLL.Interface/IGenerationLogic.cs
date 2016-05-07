@@ -4,18 +4,18 @@ namespace GenerationText.BLL
 {
     public interface IGenerationLogic
     {
-        //void AddFile(string path);
+        void AddFile(string path);
 
-        //void AddText(string text);
+        void AddText(string text);
 
-        //string GenerateRandom();
+        string GenerateRandom();
 
-        //string GenerateRandom(int n);
+        string GenerateRandom(int n);
 
-        //List<string> GetSeparator(string text);
+        List<string> GetSeparator(string text);
 
         List<string> GetWords();
 
-        //List<string> GetWords(int n);
+        List<string> GetWords(int n);
     }
 }

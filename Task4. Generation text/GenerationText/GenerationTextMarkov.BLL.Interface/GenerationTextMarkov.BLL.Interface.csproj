@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB8BF7FA-94D9-478B-B888-40ADDE2A7873}</ProjectGuid>
+    <ProjectGuid>{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GenerationTextMarvoc.BLL</RootNamespace>
-    <AssemblyName>GenerationTextMarvoc.BLL</AssemblyName>
+    <RootNamespace>GenerationTextMarkov.BLL.Interface</RootNamespace>
+    <AssemblyName>GenerationTextMarkov.BLL.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,22 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenMarkovText.cs" />
+    <Compile Include="IGenMarkovText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GenerationText.DAL.Interface\GenerationText.DAL.Interface.csproj">
-      <Project>{327e06b2-c338-4a1e-bbc7-65c602a4ce31}</Project>
-      <Name>GenerationText.DAL.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GenerationText.DAL\GenerationText.DAL.csproj">
-      <Project>{D280BC89-99EC-49BC-B707-CBD0701A9353}</Project>
-      <Name>GenerationText.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GenerationTextMarkov.BLL.Interface\GenerationTextMarkov.BLL.Interface.csproj">
-      <Project>{1aa60db7-bd18-4a9f-90f0-7ed93fd176b2}</Project>
-      <Name>GenerationTextMarkov.BLL.Interface</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,5 @@
-﻿using GenerationText.BLL;
-using GenerationText.DAL;
+﻿using GenerationText.DAL;
+using GenerationTextMarkov.BLL.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GenerationTextMarvoc.BLL
 {
-    public class GenMarkovText: IGenerationLogic
+    public class GenMarkovText: IGenMarkovText
     {
         private IGenerationDAO data = new GenerationDAO();
         private Dictionary<List<string>, Dictionary<string, double>> Prob = new Dictionary<List<string>, Dictionary<string, double>>(0);

@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{78C46702-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGenerator", "TestGenerator\TestGenerator.csproj", "{B8E579E5-20B8-4E44-AA76-23A155000481}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerationTextMarkov.BLL.Interface", "GenerationTextMarkov.BLL.Interface\GenerationTextMarkov.BLL.Interface.csproj", "{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{B8E579E5-20B8-4E44-AA76-23A155000481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8E579E5-20B8-4E44-AA76-23A155000481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8E579E5-20B8-4E44-AA76-23A155000481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{0EB9A82E-F2B8-4FE4-B570-F013D0E8E78D} = {CD49D45B-BCE2-4DA3-87DB-2F02D55DF537}
 		{BB8BF7FA-94D9-478B-B888-40ADDE2A7873} = {3DC6D420-71FA-458C-B984-04DE00A0A012}
 		{B8E579E5-20B8-4E44-AA76-23A155000481} = {78C46702-2805-44F8-A1D7-585D5D650D88}
+		{1AA60DB7-BD18-4A9F-90F0-7ED93FD176B2} = {3DC6D420-71FA-458C-B984-04DE00A0A012}
 	EndGlobalSection
 EndGlobal

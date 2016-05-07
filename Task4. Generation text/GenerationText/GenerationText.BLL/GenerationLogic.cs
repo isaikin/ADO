@@ -91,7 +91,7 @@ namespace GenerationText.BLL
             {
                 var text = input.ReadToEnd();
                 var separator = this.GetSeparator(text);
-
+                this.data.AddText(text);
                 this.data.AddWords(text.Split(separator.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList());
             }
         }

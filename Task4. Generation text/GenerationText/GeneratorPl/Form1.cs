@@ -1,5 +1,5 @@
 ﻿using GenerationText.BLL;
-using GenerationText.Entity;
+using GenerationTextMarvoc.BLL;
 using System;
 using System.Windows.Forms;
 
@@ -8,6 +8,7 @@ namespace GeneratorPl
     public partial class Form1 : Form
     {
         private IGenerationLogic GrahpLogic = new GenerationLogic();
+        private GenMarkovText MarkovLogic = new GenMarkovText();
 
         private int n = 10;
 
@@ -83,10 +84,20 @@ namespace GeneratorPl
 
         private void генерацияАлгоримомМарковаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MarkovChain temp = new MarkovChain();
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                listBox1.Items.Add(temp.GenerateText(openFileDialog1.FileName));
+                var wods = MarkovLogic.GetWords();
+                foreach (var item in wods)
+                {
+                    listBox1.Items.Add(item);
+                }
+
+                listBox1.Items.Add("-----------");
+            }
+            catch
+            {
+                listBox1.Items.Add("Не хватает мощности текста");
+                listBox1.Items.Add("-----------");
             }
         }
 

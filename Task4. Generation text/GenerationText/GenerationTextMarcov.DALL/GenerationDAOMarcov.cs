@@ -6,11 +6,11 @@ using System.Text;
 
 namespace GenerationTextMarcov.DAL
 {
-    public class DAOMACOV
+    public class GenerationDAOMarkov
     {
         private static string words;
 
-        public DAOMACOV()
+        public GenerationDAOMarkov()
         {
             words = this.GetWords();
         }

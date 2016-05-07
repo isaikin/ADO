@@ -8,10 +8,12 @@ namespace GenerationText.DAL
     public class GenerationDAO : IGenerationDAO
     {
         private static IDictionary<string, List<string>> words;
+        private static string book;
 
         public GenerationDAO()
         {
             words = this.GetWords();
+            book = this.GetText();
         }
 
         public void AddWords(string path)
@@ -99,6 +101,11 @@ namespace GenerationText.DAL
             this.SaveWords();
         }
 
+        public void AddText(string text)
+        {
+            book = text;
+        }
+
         public IDictionary<string, List<string>> Getwords()
         {
             return new Dictionary<string, List<string>>(words);
@@ -127,7 +134,8 @@ namespace GenerationText.DAL
             var result = new Dictionary<string, List<string>>();
             using (StreamReader input = new StreamReader("inputWords.txt"))
             {
-                var tempstringArray = input.ReadToEnd().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                book = input.ReadToEnd();
+                var tempstringArray = book.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in tempstringArray)
                 {
                     var tempstring = item.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(word => this.ClearWord(word)).ToList();
@@ -138,6 +146,11 @@ namespace GenerationText.DAL
             }
 
             return result;
+        }
+
+        public string GetText()
+        {
+            return book;
         }
 
         public List<string> GetSeparator(string text)

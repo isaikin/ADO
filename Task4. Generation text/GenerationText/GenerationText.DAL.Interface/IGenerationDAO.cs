@@ -6,6 +6,8 @@ namespace GenerationText.DAL
     {
         void AddWords(string path);
 
+        void AddText(string text);
+
         void AddWords(List<string> text);
 
         string ClearWord(string temp);
@@ -13,5 +15,7 @@ namespace GenerationText.DAL
         List<string> GetSeparator(string text);
 
         IDictionary<string, List<string>> Getwords();
+
+        string GetText();
     }
 }

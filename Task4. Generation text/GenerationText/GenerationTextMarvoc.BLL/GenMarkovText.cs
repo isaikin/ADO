@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GenerationTextMarvoc.BLL
 {
-    public class GenMarkovText
+    public class GenMarkovText: IGenerationLogic
     {
         private IGenerationDAO data = new GenerationDAO();
         private Dictionary<List<string>, Dictionary<string, double>> Prob = new Dictionary<List<string>, Dictionary<string, double>>(0);

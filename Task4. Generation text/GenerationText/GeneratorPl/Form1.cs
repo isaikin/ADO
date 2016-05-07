@@ -40,7 +40,7 @@ namespace GeneratorPl
         {
             try
             {
-                var wods = GrahpLogic.GetWords(n);
+                var wods = ((GenerationLogic)GrahpLogic).GetWords(n);
                 foreach (var item in wods)
                 {
                     listBox1.Items.Add(item);
@@ -57,7 +57,7 @@ namespace GeneratorPl
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                GrahpLogic.AddFile(openFileDialog1.FileName);
+                ((GenerationLogic)GrahpLogic).AddFile(openFileDialog1.FileName);
             }
         }
 
